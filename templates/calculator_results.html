@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>
+        {{ eth_made }} ETH (${{ usd_made }}) with {{ coin_num }} POOL
+    </h1>
+    <p>
+        On {{ payout_date }} you would have made {{ payout_amount }} eth per POOL
+    </p>
+{% endblock %}
