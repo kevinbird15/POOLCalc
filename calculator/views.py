@@ -1,7 +1,7 @@
 import urllib
-import urllib.request
+#import urllib.request
 import json
-from urllib.request import urlopen
+#from urllib.request import urlopen
 from django.shortcuts import render, redirect
 from .forms import PayoutForm, CalculatorForm
 from .models import PayoutAmount, Calculator
