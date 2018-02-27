@@ -20,7 +20,7 @@ def month_check(request):
 
 
 def calculator_results(request):
-    pull_from_crypto = urllib.request.urlopen("https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD").read()
+    pull_from_crypto = urllib.request.urlopen("https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD").read().decode('utf-8')
     eth_to_usd = json.loads(pull_from_crypto)["USD"]
     last_calculator_request = Calculator.objects.last()
     last_payout_amount = PayoutAmount.objects.last()
