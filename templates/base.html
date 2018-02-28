@@ -8,19 +8,19 @@
         <meta name="author" content="">
         <title>POOL Calculator</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" href="{% static 'css/cover.css' %}">
     </head>
 
     <body class="text-center">
-
         <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
             <header class="masthead mb-auto">
                 <div class="inner">
                     <h3 class="masthead-brand">POOL Calculator</h3>
                     <nav class="nav nav-masthead justify-content-center">
-                        <a class="nav-link active" href="/">Home</a>
-                        <a class="nav-link" href="/about">About</a>
-                        <a class="nav-link" href="/">Contact</a>
+                        <a id="home-link" class="nav-link" href="/">Home</a>
+                        <a id="about-link" class="nav-link" href="/about">About</a>
+                        <a id="contact-link" class="nav-link" href="/">Contact</a>
                     </nav>
                 </div>
             </header>

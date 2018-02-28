@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <script type="text/javascript">
-    $(document).ready(function () {
-        $('#about-link').addClass("active");
-        $('#home-link').removeClass("active");
-        $('#contact-link').removeClass("active");
-    });
+    <script>
+        $(document).ready(function () {
+            $( "#contact-link" ).addClass( "active" );
+            $( "#about-link" ).removeClass( "active" );
+            $( "#home-link" ).removeClass( "active" );
+        });
     </script>
     <p>
         POOL Calculator is a side project that is meant to get more people interested in POOL and to become a resource to send people with questions.
