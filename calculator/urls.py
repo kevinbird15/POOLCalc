@@ -6,4 +6,5 @@ urlpatterns = [
     url(r'^payout/new/$', views.enter_payout, name='enter_payout'),
     url(r'^results/', views.calculator_results, name='calculator_results'),
     url(r'^about/', views.about, name='about'),
+    url(r'^contact/', views.contact, name='contact'),
 ]
