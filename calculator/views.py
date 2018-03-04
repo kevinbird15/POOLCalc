@@ -1,7 +1,7 @@
 import urllib
 import urllib.request
 import json
-import pandas as pd
+#import pandas as pd
 from django.shortcuts import render, redirect
 from .forms import PayoutForm, CalculatorForm
 from .models import PayoutAmount, Calculator
