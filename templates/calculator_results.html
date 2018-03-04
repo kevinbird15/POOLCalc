@@ -2,9 +2,9 @@
 
 {% block content %}
     <h1>
-        {{ eth_made }} ETH (${{ usd_made }}) with {{ coin_num }} POOL
+        {{ eth_made|floatformat:8 }} ETH (${{ usd_made }}) with {{ coin_num }} POOL
     </h1>
     <p>
-        On {{ payout_date }} you would have made {{ payout_amount }} eth per POOL
+        On {{ payout_date.date }} you would have made {{ payout_amount|floatformat:8 }} eth per POOL
     </p>
 {% endblock %}
