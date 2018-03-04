@@ -13,7 +13,7 @@
         {% for i in payout_amounts %}
             <tr>
                 <td>{{ i.payout_date.date }}</td>
-                <td>{{ i.payout_amount|floatformat:8 }}</td>
+                <td>{{ i.payout_amount|floatformat:8 }} ETH</td>
             </tr>
         {% endfor %}
         </tbody>
