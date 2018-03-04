@@ -7,7 +7,7 @@ class PayoutForm(forms.ModelForm):
 
     class Meta:
         model = PayoutAmount
-        fields = ('payout_date', 'payout_amount')
+        fields = ('payout_date', 'payout_amount', 'historical_usd_to_eth')
 
 
 class CalculatorForm(forms.ModelForm):

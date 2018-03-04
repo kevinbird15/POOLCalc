@@ -79,4 +79,13 @@ def contact(request):
 
 def historical_payouts(request):
     payout_amounts = PayoutAmount.objects.order_by('payout_date').values()
-    return render(request, "historical_payouts.html", {"payout_amounts": payout_amounts})
+    pull_from_crypto = urllib.request.urlopen("https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD").read().decode('utf-8')
+    current_eth_to_usd = json.loads(pull_from_crypto)["USD"]
+    current_usd = payout_amounts.all().values()
+    payout_values = []
+    for i in payout_amounts:
+        payout_values.append(i)
+    for i, payout_value in enumerate(payout_values):
+        payout_value["usd_historical_payout"] = payout_value["payout_amount"] * payout_value["historical_usd_to_eth"]
+        payout_value["usd_current_payout"] = payout_value["payout_amount"] * current_eth_to_usd
+    return render(request, "historical_payouts.html", {"payout_values": payout_values})

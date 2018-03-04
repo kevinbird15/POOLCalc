@@ -1,21 +1,29 @@
-{% extends 'base.html' %}
+{% extends 'base-wider.html' %}
 
 {% block content %}
     <h1>Historical Payouts</h1>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Payout Date</th>
-                <th scope="col">Payout Amount</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for i in payout_amounts %}
-            <tr>
-                <td>{{ i.payout_date.date }}</td>
-                <td>{{ i.payout_amount|floatformat:8 }} ETH</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Payout Date</th>
+                        <th scope="col">Payout Amount (ETH)</th>
+                        <th scope="col">Payout Amount (Current USD)</th>
+                        <th scope="col">Payout Amount (Historical USD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for payout in payout_values %}
+                    <tr>
+                        <td>{{ payout.payout_date.date }}</td>
+                        <td>{{ payout.payout_amount|floatformat:8 }} ETH</td>
+                        <td>${{ payout.usd_current_payout|floatformat:5 }}</td>
+                        <td>${{ payout.usd_historical_payout|floatformat:5 }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}
