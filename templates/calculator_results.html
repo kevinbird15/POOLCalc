@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
     <h1>
@@ -7,4 +8,5 @@
     <p>
         On {{ payout_date.date }} you would have made {{ payout_amount|floatformat:8 }} eth per POOL
     </p>
+    <img class="masthead-brand"><img src="{% static 'images/posminingco.png' %}" width="192px" height="192px"></img>
 {% endblock %}

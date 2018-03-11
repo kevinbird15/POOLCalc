@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
     <script>
@@ -6,7 +7,9 @@
         $( "#about-link" ).removeClass( "active" );
         $( "#contact-link" ).removeClass( "active" );
     </script>
+
     <h1 class="cover-heading">What is POOL?</h1>
+
     <p class="lead">
         POOL coin gives users 65% of the payouts from the profits while another 25% of the payouts are reinvested.  10% of the payouts are taken to maintain the mining equipment.  To learn more about this coin, read the whitepaper <a href="http://stakepool.co/POOLTokenLaunch.pdf" style="color: chartreuse" target="_blank">here</a>.
     </p>
@@ -15,5 +18,8 @@
         Enter any amount of POOL to see how much it would have made last month: {{ form.coin_num }}
         <button type="submit" class="save btn btn-default">Calculate!</button>
     </form>
+    </p>
+    <p class="lead">
+        To see the historical price payouts, go <a href="historical" style="color:chartreuse;">here</a>.
     </p>
 {% endblock %}
